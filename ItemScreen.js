@@ -12,7 +12,7 @@ export default class ItemScreen extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://192.168.101.132:3000/${this.props.path}.json`)
+    fetch(`http://localhost:3000/${this.props.path}.json`)
       .then((res) => res.json())
       .then((items) => {
         this.setState({

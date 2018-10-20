@@ -13,14 +13,14 @@ export default class GearBuilder extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://192.168.101.132:3000/weapons.json`)
+    fetch(`http://localhost:3000/weapons.json`)
       .then((res) => res.json())
       .then((items) => {
         this.setState({
           weapons: items
         })
       });
-    fetch(`http://192.168.101.132:3000/armors.json`)
+    fetch(`http://localhost:3000/armors.json`)
       .then((res) => res.json())
       .then((items) => {
         this.setState({
@@ -32,13 +32,13 @@ export default class GearBuilder extends React.Component {
   onPickerChange = (key) => value => {
     this.setState({
       [key]: value
-    })    
+    })
   }
 
   seeStats = () => {
     this.props.navigation.navigate('Detail', {
-      head: this.state.head, 
-      arms: this.state.arms, 
+      head: this.state.head,
+      arms: this.state.arms,
       torso: this.state.torso,
       legs: this.state.legs,
       weapon: this.state.weapon
@@ -99,11 +99,11 @@ export default class GearBuilder extends React.Component {
             title="View Stats"
             accessibilityLabel="View Stats"
             disabled = {this.isDisabled()}
-          /> 
+          />
       </View>
-      
+
     </ScrollView>
-    
+
   }
 
 }
